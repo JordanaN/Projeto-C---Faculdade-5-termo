@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views", "FarmaApp\Views.csproj", "{90E1F1BB-FC5A-417D-B314-4A78DBA93C90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Views\Domain.csproj", "{D36EE44D-F4BA-490B-8037-19BD34AF0DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banco", "Banco\Banco.csproj", "{CAC99490-B712-40D6-A1A9-669D131A7223}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90E1F1BB-FC5A-417D-B314-4A78DBA93C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E1F1BB-FC5A-417D-B314-4A78DBA93C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E1F1BB-FC5A-417D-B314-4A78DBA93C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E1F1BB-FC5A-417D-B314-4A78DBA93C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36EE44D-F4BA-490B-8037-19BD34AF0DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36EE44D-F4BA-490B-8037-19BD34AF0DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36EE44D-F4BA-490B-8037-19BD34AF0DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36EE44D-F4BA-490B-8037-19BD34AF0DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC99490-B712-40D6-A1A9-669D131A7223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC99490-B712-40D6-A1A9-669D131A7223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC99490-B712-40D6-A1A9-669D131A7223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC99490-B712-40D6-A1A9-669D131A7223}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
