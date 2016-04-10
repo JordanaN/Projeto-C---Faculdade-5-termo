@@ -37,6 +37,7 @@
             this.PicBoxLogin = new System.Windows.Forms.PictureBox();
             this.BtAcessar = new System.Windows.Forms.Button();
             this.BtSair = new System.Windows.Forms.Button();
+            this.btCadastrarUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxLogin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +87,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(164, 29);
             this.txtSenha.TabIndex = 4;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
             // PicBoxLogin
             // 
@@ -99,7 +101,8 @@
             // 
             // BtAcessar
             // 
-            this.BtAcessar.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtAcessar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtAcessar.Location = new System.Drawing.Point(290, 163);
             this.BtAcessar.Name = "BtAcessar";
             this.BtAcessar.Size = new System.Drawing.Size(78, 27);
@@ -110,7 +113,8 @@
             // 
             // BtSair
             // 
-            this.BtSair.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtSair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtSair.Location = new System.Drawing.Point(376, 163);
             this.BtSair.Name = "BtSair";
             this.BtSair.Size = new System.Drawing.Size(78, 27);
@@ -119,12 +123,25 @@
             this.BtSair.UseVisualStyleBackColor = true;
             this.BtSair.Click += new System.EventHandler(this.BtSair_Click);
             // 
+            // btCadastrarUser
+            // 
+            this.btCadastrarUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btCadastrarUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCadastrarUser.Location = new System.Drawing.Point(290, 196);
+            this.btCadastrarUser.Name = "btCadastrarUser";
+            this.btCadastrarUser.Size = new System.Drawing.Size(164, 27);
+            this.btCadastrarUser.TabIndex = 8;
+            this.btCadastrarUser.Text = "Cadastrar Usuario";
+            this.btCadastrarUser.UseVisualStyleBackColor = true;
+            this.btCadastrarUser.Click += new System.EventHandler(this.btCadastrarUser_Click);
+            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(487, 224);
+            this.ClientSize = new System.Drawing.Size(522, 238);
+            this.Controls.Add(this.btCadastrarUser);
             this.Controls.Add(this.BtSair);
             this.Controls.Add(this.BtAcessar);
             this.Controls.Add(this.PicBoxLogin);
@@ -156,6 +173,7 @@
         private System.Windows.Forms.PictureBox PicBoxLogin;
         private System.Windows.Forms.Button BtAcessar;
         private System.Windows.Forms.Button BtSair;
+        private System.Windows.Forms.Button btCadastrarUser;
     }
 }
 

@@ -16,27 +16,28 @@ namespace Banco
 
         public ConexaoDB()
         {
-            strConnection = config.Default.conexao;
+            strConnection = config.Default.conexao;                
             sqlConection = new SqlConnection(strConnection);
-            sqlConection.Open();
+            sqlConection.Open();                      
         }           
         
 
         //Metodo abrindo a conexão
         public SqlConnection conectar()
         {
-            sqlConection = new SqlConnection(strConnection);
+          sqlConection = new SqlConnection(strConnection);
             try
             {
                 sqlConection.Open();
                 return sqlConection;
-                
             }
             catch
-            {
-                return null;
+            { 
+              return null;
             }
         }
+
+
 
         //verificando e fechando a conexão
         protected SqlConnection desconectar()

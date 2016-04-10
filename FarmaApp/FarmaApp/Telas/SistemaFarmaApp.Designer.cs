@@ -28,28 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.lblDataTime = new System.Windows.Forms.ToolStripLabel();
+            this.btSairTelaPrincipal = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btSairTelaPrincipal = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel1
             // 
@@ -67,9 +58,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblDataTime,
             this.btSairTelaPrincipal});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 3);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 4);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(748, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(748, 31);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -77,7 +68,23 @@
             // 
             this.lblDataTime.BackColor = System.Drawing.Color.Transparent;
             this.lblDataTime.Name = "lblDataTime";
-            this.lblDataTime.Size = new System.Drawing.Size(0, 29);
+            this.lblDataTime.Size = new System.Drawing.Size(0, 30);
+            // 
+            // btSairTelaPrincipal
+            // 
+            this.btSairTelaPrincipal.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btSairTelaPrincipal.AutoSize = false;
+            this.btSairTelaPrincipal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btSairTelaPrincipal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btSairTelaPrincipal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSairTelaPrincipal.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btSairTelaPrincipal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btSairTelaPrincipal.Margin = new System.Windows.Forms.Padding(2);
+            this.btSairTelaPrincipal.Name = "btSairTelaPrincipal";
+            this.btSairTelaPrincipal.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btSairTelaPrincipal.Size = new System.Drawing.Size(78, 27);
+            this.btSairTelaPrincipal.Text = "Sair";
+            this.btSairTelaPrincipal.Click += new System.EventHandler(this.btSairTelaPrincipal_Click);
             // 
             // statusStrip1
             // 
@@ -99,8 +106,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(748, 24);
@@ -113,25 +119,6 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(109, 20);
             this.toolStripMenuItem1.Text = "Cadastrar Cliente";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(120, 20);
-            this.toolStripMenuItem2.Text = "Cadastrar Produtos";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // btSairTelaPrincipal
-            // 
-            this.btSairTelaPrincipal.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btSairTelaPrincipal.BackColor = System.Drawing.Color.LightGray;
-            this.btSairTelaPrincipal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btSairTelaPrincipal.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btSairTelaPrincipal.Name = "btSairTelaPrincipal";
-            this.btSairTelaPrincipal.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.btSairTelaPrincipal.Size = new System.Drawing.Size(50, 29);
-            this.btSairTelaPrincipal.Text = "Sair";
-            this.btSairTelaPrincipal.Click += new System.EventHandler(this.btSairTelaPrincipal_Click);
             // 
             // SistemaFarmaApp
             // 
@@ -161,8 +148,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel lblDataTime;
@@ -170,7 +155,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripButton btSairTelaPrincipal;
     }
 }
