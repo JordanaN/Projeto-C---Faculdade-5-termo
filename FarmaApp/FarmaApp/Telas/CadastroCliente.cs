@@ -27,6 +27,7 @@ namespace Views.Telas
         //Botão Salvar
         private void btSalvar_Click(object sender, EventArgs e)
         {
+                    
             try
             {
                 Cliente cliente = new Cliente();
@@ -95,15 +96,34 @@ namespace Views.Telas
         {
             this.Close();
 
-        }       
+        }
 
         //botão Pesquisar
-        private void btPesquisar_Click(object sender, EventArgs e)
+        private void btPesquisar_Click_1(object sender, EventArgs e)
         {
-          
+            try
+            {
+                var pesq = tbValorPes.Text;
+
+                if ((tbValorPes.Text.Length) < 0)
+                {
+                    this.tbValorPes.Focus();
+                    MessageBox.Show("Inserir Nome a ser pesquisado!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var pesquisaNome = objConn.PesquisaNome(pesq);
+                    dataGridViewClientes.DataSource = pesquisaNome;
+                }
+
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
 
         }
-        
 
         //botão Cancelar tabPagePesquisar
         private void btCancelartabPesquisar_Click(object sender, EventArgs e)
@@ -119,28 +139,12 @@ namespace Views.Telas
 
         }
 
-
         //DataGridView Aba pesquisar cliente 
         private void dataGridViewClientes_Enter(object sender, EventArgs e)
         {
             var lista1 = objConn.ListaCliente();
             dataGridViewClientes.DataSource = lista1;
-        }       
-
-
-        private void limpar()
-        {
-            txtNome.Text = String.Empty;
-            txtIdade.Text = String.Empty;
-            txtEmail.Text = String.Empty;
-            txtBairro.Text = String.Empty;
-            txtCidade.Text = String.Empty;
-            txtNumero.Text = String.Empty;
-            txtRua.Text = String.Empty;
-            CBEstado.Text = String.Empty;
-        }
-       
-       
+        }                     
 
         //evento para chamar a tela de alterar cliente
         private void dataGridViewClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -182,6 +186,18 @@ namespace Views.Telas
 
         }
 
-        
+        //metodo para limpar campos
+        private void limpar()
+        {
+            txtNome.Text = String.Empty;
+            txtIdade.Text = String.Empty;
+            txtEmail.Text = String.Empty;
+            txtBairro.Text = String.Empty;
+            txtCidade.Text = String.Empty;
+            txtNumero.Text = String.Empty;
+            txtRua.Text = String.Empty;
+            CBEstado.Text = String.Empty;
+        }
+      
     }
 }

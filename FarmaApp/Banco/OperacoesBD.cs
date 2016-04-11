@@ -13,7 +13,7 @@ namespace Banco
         {
         }
 
-
+        //metodo de inserir cliente
         public bool Insert(Cliente cliente)
         {
 
@@ -48,7 +48,7 @@ namespace Banco
             }
         }
 
-
+        //metodo de atualizar cliente
         public bool Update(Cliente cliente)
         {
             try
@@ -80,7 +80,7 @@ namespace Banco
             }
         }
 
-
+        //metodo de deletar cliente
         public bool Delete(Cliente cliente)
         {
             try
@@ -100,32 +100,8 @@ namespace Banco
                 this.desconectar();
             }
         }
-
-        //usado para pesquisa por nome ou codigo
-        public DataTable Pesquisar(string sql, string param)
-        {
-            Cliente c = new Cliente();
-            try
-            {
-                SqlCommand objCon = new SqlCommand(sql, base.conectar());
-                objCon.Parameters.Add(new SqlParameter(c.Nome, param));
-                SqlDataAdapter adp = new SqlDataAdapter(objCon);
-                DataTable dt = new DataTable();
-                adp.Fill(dt);
-                return dt;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            finally
-            {
-                this.desconectar();
-            }
-
-        }
-
-
+        
+        //metodo para listar cliente na dataGridView
         public List<Cliente> ListaCliente()
         {
             var sql = "select * from cliente";
@@ -160,29 +136,48 @@ namespace Banco
             }
         }
 
-
-        //metodo utilizado na pesquisa
-        public DataTable ListarGrid()
+        //metodo de pesquisa por nome
+        public List<Cliente> PesquisaNome(String pesquisar)
         {
+            var sql = "select * from cliente where nome like @nome";
+            pesquisar = "%" + pesquisar + "%";
+            var pesquisaNome = new List<Cliente>();
             try
             {
-                var sql = "SELECT FROM  @NOME, @IDADE, @EMAIL FROM CLIENTE";
-                SqlCommand objCon = new SqlCommand(sql, base.conectar());
-                SqlDataAdapter adp = new SqlDataAdapter(objCon);
-                DataTable dt = new DataTable();
-                adp.Fill(dt);
-                return dt;
+                SqlCommand cmd = new SqlCommand(sql, base.conectar());
+                cmd.Parameters.AddWithValue("@nome", pesquisar);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    pesquisaNome.Add(new Cliente
+                    {
+                        id_Cliente = Convert.ToInt32(rdr["id_cliente"]),
+                        Nome = rdr["Nome"].ToString(),
+                        Idade = Convert.ToInt32(rdr["Idade"]),
+                        Email = rdr["Email"].ToString(),
+                        Rua = rdr["Rua"].ToString(),
+                        Numero = Convert.ToInt32(rdr["Numero"]),
+                        Bairro = rdr["Bairro"].ToString(),
+                        Cidade = rdr["Cidade"].ToString(),
+                        Estado = rdr["Estado"].ToString()
+                    });
+
+                }
             }
             catch (SqlException)
             {
                 throw;
             }
             finally
+
             {
+
                 this.desconectar();
+                
             }
+            return pesquisaNome;
         }
-        
 
         //metodo de inserir Usuarios do sistema
         public bool InsertUser(Usuario user)
@@ -208,11 +203,8 @@ namespace Banco
                 this.desconectar();
             }
         }
-
-
         
     }
-        
 }
 
 

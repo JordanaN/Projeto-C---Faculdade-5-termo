@@ -143,6 +143,7 @@ namespace Views.Telas
             this.btPesquisar.TabIndex = 1;
             this.btPesquisar.Text = "Pesquisar";
             this.btPesquisar.UseVisualStyleBackColor = true;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click_1);
             // 
             // dataGridViewClientes
             // 
@@ -491,7 +492,6 @@ namespace Views.Telas
             this.Name = "CadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
-            //this.Load += new System.EventHandler(this.CadastroCliente_Load);
             this.tabPageListar.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
